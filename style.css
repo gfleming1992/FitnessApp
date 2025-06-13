@@ -1,0 +1,194 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.app-container {
+    width: 360px; /* Optimized for Pixel 9 Pro XL (approximate width) */
+    height: 780px; /* Optimized for Pixel 9 Pro XL (approximate height) */
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Prevents content from overflowing the rounded corners */
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 15px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.exercise-section {
+    background-color: #e9e9e9;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.exercise-section h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    color: #555;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.data-table th, .data-table td {
+    border: 1px solid #ddd;
+    padding: 1px; /* Further reduced padding for a tighter look */
+    text-align: center;
+    font-size: 0.8em;
+    vertical-align: middle; /* Align content vertically */
+}
+
+.data-table td.input-cell {
+    padding: 0; /* Remove padding specifically for cells with inputs */
+}
+
+.data-table th {
+    background-color: #f7f7f7;
+}
+
+.data-table input[type="number"] {
+    width: 100%; /* Make input take full cell width */
+    height: 100%; /* Make input take full cell height */
+    padding: 0; /* Remove padding from input box */
+    box-sizing: border-box;
+    border: none; /* Remove border from input box for spreadsheet look */
+    border-radius: 0; /* Remove border-radius */
+    text-align: center;
+    font-size: 0.75em; /* Slightly smaller font for numbers in input */
+    appearance: textfield; /* Standard property */
+    -moz-appearance: textfield; /* Firefox - hide spinners */
+}
+
+/* Hide spinners on number inputs for Chrome, Safari, Edge, Opera */
+.data-table input[type="number"]::-webkit-outer-spin-button,
+.data-table input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    background-color: #333;
+    color: white;
+    flex-shrink: 0; /* Prevents the navigation bar from shrinking */
+    box-sizing: border-box; /* Ensure padding/border included in width/height */
+    width: 100%; /* Explicitly set width */
+}
+
+.nav-button {
+    background-color: #555;
+    color: white;
+    border: none;
+    padding: 10px 15px; /* Re-iterate padding */
+    font-size: 1.2em;   /* Re-iterate font-size */
+    border-radius: 5px;
+    cursor: pointer;
+    box-sizing: border-box; /* Ensure padding/border included in width/height */
+    line-height: normal; /* Default line height */
+}
+
+.nav-button:hover {
+    background-color: #777;
+}
+
+.current-date {
+    font-size: 1em;     /* Re-iterate font-size */
+    color: white;       /* Ensure text color */
+    padding: 0 10px;    /* Add some horizontal padding for spacing */
+    box-sizing: border-box; /* Ensure padding/border included in width/height */
+    text-align: center;
+}
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 320px; /* Max width similar to app container */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#note-textarea {
+    width: calc(100% - 16px); /* Full width minus padding */
+    padding: 8px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+}
+
+.modal-buttons {
+    text-align: right;
+}
+
+.modal-buttons button {
+    padding: 8px 15px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#save-note-button {
+    background-color: #28a745;
+    color: white;
+}
+
+#cancel-note-button {
+    background-color: #6c757d;
+    color: white;
+}

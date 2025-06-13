@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Fitness Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <div id="main-content" class="main-content">
+            <!-- Exercise sections will be dynamically inserted here -->
+        </div>
+
+        <div class="navigation">
+            <button id="prev-day" class="nav-button">&lt;</button>
+            <div id="current-date" class="current-date"></div>
+            <button id="next-day" class="nav-button">&gt;</button>
+        </div>
+    </div>
+
+    <div id="note-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h3 id="note-modal-title">Note</h3>
+            <textarea id="note-textarea" rows="6"></textarea>
+            <div class="modal-buttons">
+                <button id="save-note-button">Save Note</button>
+                <button id="cancel-note-button">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
