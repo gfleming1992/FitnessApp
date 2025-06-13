@@ -6,19 +6,21 @@ body, html {
     color: #333;
     width: 100vw; /* Full viewport width */
     height: 100vh; /* Full viewport height */
-    display: flex; /* Keep flex for app-container centering if needed, or remove if app-container is also full screen */
-    /* Remove justify-content and align-items if app-container is to fill screen directly */
+    display: flex;
+    justify-content: center; /* Center .app-container horizontally */
+    align-items: center; /* Center .app-container vertically */
 }
 
 .app-container {
-    width: 100%; /* Full width of parent (body) */
-    height: 100%; /* Full height of parent (body) */
+    width: 100%; /* Takes full width available, up to max-width */
+    max-width: 500px; /* Maximum width of the app container */
+    height: 100%; /* Takes full height available (100vh from body) */
     background-color: #fff;
-    /* border-radius: 10px; */ /* Remove if it doesn't make sense for full screen */
-    /* box-shadow: 0 0 10px rgba(0,0,0,0.1); */ /* Remove if it doesn't make sense for full screen */
     display: flex;
     flex-direction: column;
-    overflow: hidden; /* Prevents content from overflowing the rounded corners */
+    overflow: hidden; /* Prevents content from overflowing */
+    box-shadow: 0 0 15px rgba(0,0,0,0.15); /* Optional: add shadow for better appearance when not full-width */
+    /* border-radius: 10px; */ /* Optional: can be added if desired */
 }
 
 .main-content {
