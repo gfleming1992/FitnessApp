@@ -4,18 +4,18 @@ body, html {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
     color: #333;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    display: flex; /* Keep flex for app-container centering if needed, or remove if app-container is also full screen */
+    /* Remove justify-content and align-items if app-container is to fill screen directly */
 }
 
 .app-container {
-    width: 360px; /* Optimized for Pixel 9 Pro XL (approximate width) */
-    height: 780px; /* Optimized for Pixel 9 Pro XL (approximate height) */
+    width: 100%; /* Full width of parent (body) */
+    height: 100%; /* Full height of parent (body) */
     background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    /* border-radius: 10px; */ /* Remove if it doesn't make sense for full screen */
+    /* box-shadow: 0 0 10px rgba(0,0,0,0.1); */ /* Remove if it doesn't make sense for full screen */
     display: flex;
     flex-direction: column;
     overflow: hidden; /* Prevents content from overflowing the rounded corners */
